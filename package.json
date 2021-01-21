@@ -1,0 +1,30 @@
+{
+  "name": "nightwatch-cucumber-boilerplate",
+  "version": "1.0.0",
+  "description": "Nightwatch with Cucumber Boilerplate Project for Automation Testing",
+  "scripts": {
+    "debug": "cross-env DEBUG=nightwatch-api NIGHTWATCH_ENV=chrome NIGHTWATCH_VERBOSE=true node --inspect ./node_modules/@cucumber/cucumber/bin/cucumber-js --require-module @babel/register --require cucumber.conf.js --require step-definitions -f @cucumber/pretty-formatter  --format json:report/cucumber_report.json",
+    "test": "mkdirp report && cucumber-js --require-module @babel/register --require cucumber.conf.js --require step-definitions -f @cucumber/pretty-formatter --format json:report/cucumber_report.json",
+    "test:chrome": "cross-env NIGHTWATCH_ENV=chrome yarn test",
+    "test:firefox": "cross-env NIGHTWATCH_ENV=firefox yarn test"
+  },
+  "repository": "https://github.com/kevinasurjadi/nightwatch-cucumber-boilerplate.git",
+  "author": "Kevin Alexander Surjadi <gt_kevin_alexander@hotmail.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/register": "^7.12.10",
+    "@cucumber/cucumber": "^7.0.0",
+    "@cucumber/pretty-formatter": "^1.0.0-alpha.0",
+    "chromedriver": "^87.0.7",
+    "cross-env": "^7.0.3",
+    "cucumber-html-reporter": "^5.3.0",
+    "geckodriver": "^1.21.1",
+    "mkdirp": "^1.0.4",
+    "nightwatch": "^1.5.1",
+    "nightwatch-api": "^3.0.1",
+    "selenium-server": "^3.141.59"
+  }
+}
